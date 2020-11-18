@@ -17,15 +17,18 @@ use App\Models\User;
 Route::get('/', function () {
     return view('auth.login');
 });
+if(Route::middleware(['auth:sanctum', 'verified'])){
+    
+    Route::resource('user', 'App\Http\Controllers\UserController');
+    Route::resource('noticia', 'App\Http\Controllers\NoticiaController');
+}
+/*
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
   
     return view('dashboard');
 })->name('dashboard');
 
-/*if(Route::middleware(['auth:sanctum', 'verified'])){
-    
-    Route::resource('user', 'App\Http\Controllers\UserController');
-}
+
 
 
     // Route::resource('user', 'App\Http\Controllers\UserController');

@@ -4,17 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\UserFormRequest;
-
+use App\Http\Requests\UserFormEdit;
 use App\Models\User;
 
 class UserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-
      public function __construct(){
          
         $this->middleware('auth');
@@ -29,23 +23,14 @@ class UserController extends Controller
         }
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+  
     public function create()
     {
         return \view('users.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+  
+    public function store(UserFormRequest $request)
     {
         $usuario= new User();
         $usuario->name=$request->get('name');
@@ -55,48 +40,33 @@ class UserController extends Controller
         return redirect('/user');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+   
     public function edit($id)
     {
-        //
+        return view('users.edit',['user'=> User::findOrFail($id)]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    
+    public function update(UserFormEdit $request, $id)
     {
-        //
+        $this->validate(request(),['email'=>['required','email','max:255','unique:users,email,'.$id]]);
+        $usuario=User::findOrFail($id);
+        $usuario->name=$request->get('name');
+        $usuario->email=$request->get('email');
+        $usuario->update();
+        return redirect('/user');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function destroy($id)
     {
-        //
+        $usuario=User::findOrFail($id);
+        $usuario->delete();
+        return redirect('user');
     }
 }

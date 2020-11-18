@@ -35,8 +35,8 @@ class ComposerStaticInitac7bc472ab7f59976d3c9616285a5044
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
         'ed962a97bd972bc82007176b647d4e36' => __DIR__ . '/..' . '/facade/ignition/src/helpers.php',
-        '40275907c8566c390185147049ef6e5d' => __DIR__ . '/..' . '/livewire/livewire/src/helpers.php',
         'f18cc91337d49233e5754e93f3ed9ec3' => __DIR__ . '/..' . '/laravelcollective/html/src/helpers.php',
+        '40275907c8566c390185147049ef6e5d' => __DIR__ . '/..' . '/livewire/livewire/src/helpers.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -582,6 +582,7 @@ class ComposerStaticInitac7bc472ab7f59976d3c9616285a5044
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\NoticiaController' => __DIR__ . '/../..' . '/app/Http/Controllers/NoticiaController.php',
         'App\\Http\\Controllers\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/UserController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
@@ -592,7 +593,11 @@ class ComposerStaticInitac7bc472ab7f59976d3c9616285a5044
         'App\\Http\\Middleware\\TrustHosts' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustHosts.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Http\\Requests\\NoticiaRequest' => __DIR__ . '/../..' . '/app/Http/Requests/NoticiaRequest.php',
+        'App\\Http\\Requests\\UserFormEdit' => __DIR__ . '/../..' . '/app/Http/Requests/UserFormEdit.php',
+        'App\\Http\\Requests\\UserFormRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UserFormRequest.php',
         'App\\Models\\Membership' => __DIR__ . '/../..' . '/app/Models/Membership.php',
+        'App\\Models\\Noticia' => __DIR__ . '/../..' . '/app/Models/Noticia.php',
         'App\\Models\\Team' => __DIR__ . '/../..' . '/app/Models/Team.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Policies\\TeamPolicy' => __DIR__ . '/../..' . '/app/Policies/TeamPolicy.php',

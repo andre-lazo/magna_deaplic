@@ -7,8 +7,10 @@
     <title>ADMIN MG</title>
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+    <script src="{{asset('js/jquery-3.5.1.js')}}" ></script>
     <link rel="stylesheet" href="{{asset('fonts/style.css')}}">
     <link rel="stylesheet" href="{{url('plugins/fontawesome-free/css/all.min.css')}}">
+    <script src="{{asset('css/bootstrap.min.js')}}" ></script>
 
 </head>
 <body>
@@ -28,13 +30,24 @@
             <li class="nav-item active ml-3">
               <a class="nav-link" href="{{route('user.index')}}">Administracion de Usuarios</a>
             </li>
+            <li class="nav-item active ml-3">
+              <a class="nav-link" href="{{route('noticia.index')}}">Noticias</a>
+            </li>
          
           </ul>
          
         </div>
+       
       </nav>
       <section class="content">
       @yield('content')
       </section>
+      <center>
+        <footer class="lead bg-dark text-white mt-5 p-5" width="100%" >
+         Correo electrónico: aso.magnavillaclub@gmail.com <br> 
+         Teléfono administración Magna:‎ +593 4-275-3351. <br>
+         Teléfono Garita Magna: +593 4-275-3361. <br>
+         Celular Garita Magna: +593 99 989 6250.  
+       </footer></center>
 </body>
 </html>
