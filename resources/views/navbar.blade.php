@@ -14,32 +14,34 @@
 
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
-        <a class="navbar-brand" href="#"><img src="{{asset('img/magna.jpeg')}}" class="mr-2" style="height: 30px; width: 30px; border-radius: 50%;" alt="">MAGNA</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarColor01">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link ml-3" href="">Bienvenida
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item active ml-3">
-              <a class="nav-link" href="{{route('user.index')}}">Administracion de Usuarios</a>
-            </li>
-            <li class="nav-item active ml-3">
-              <a class="nav-link" href="{{route('noticia.index')}}">Noticias</a>
-            </li>
-         
-          </ul>
-         
-        </div>
+   <div class="container-fluid ">
+    <nav  class="navbar navbar-expand-lg navbar-dark bg-danger fixed-top ">
+      <a class="navbar-brand" href="#"><img src="{{asset('img/magna.jpeg')}}" class="mr-2" style="height: 30px; width: 30px; border-radius: 50%;" alt="">MAGNA</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link ml-3" href="">Bienvenida
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item active ml-3">
+            <a class="nav-link" href="{{route('user.index')}}">Administracion de Usuarios</a>
+          </li>
+          <li class="nav-item active ml-3">
+            <a class="nav-link" href="{{route('noticia.index')}}">Noticias</a>
+          </li>
        
-      </nav>
-      <section class="content">
+        </ul>
+       
+      </div>
+     
+    </nav>
+   </div>
+      <section class="content mt-5">
       @yield('content')
       </section>
       <center>

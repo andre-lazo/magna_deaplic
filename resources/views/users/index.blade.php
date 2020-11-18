@@ -14,13 +14,14 @@
              background: url({{asset('img/entrada.jpeg')}}) no-repeat center center  fixed;
                font-family: 'Titillium Web', sans-serif;
                background-size: cover; 
+               
            }
        
 </style>
 @section('content')
 
-<div class="container mb-3" id="con">
-  <h1 class="text-center text-white mb-5 mt-5" style="font-family: verdana"><b>USUARIOS REGISTRADOS DE LA CIUDADELA MAGNA</b></h1>
+<div class="container mb-3 " id="con">
+  <h1 class="text-center text-white mb-5 mt-5 pt-5" style="font-family: verdana"><b>USUARIOS REGISTRADOS DE LA CIUDADELA MAGNA</b></h1>
   
  
   <a href="{{route('user.create')}}"><button type="button" class="btn btn-secondary mb-3"><i class="fas fa-user-plus"></i> AGREGAR USUARIO</button></a>
@@ -66,7 +67,7 @@
                 <td class="text-center">{{$user->email   }}</td>
                
                
-                <td class="text-center"><a href="" class="btn btn-secondary"><i class="far fa-eye"></i> Ver</a></td>
+                <td class="text-center"><a href="{{route('user.show',$user->id)}}" class="btn btn-secondary"><i class="far fa-eye"></i> Ver</a></td>
                 <td class="text-center"> <a href="{{ route('user.edit',$user->id) }}" class="btn btn-primary"><i class="far fa-edit"></i>  Modificar</a></td>
                 <td class="text-center"> 
                        
