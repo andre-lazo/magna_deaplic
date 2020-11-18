@@ -11,7 +11,11 @@
     <link rel="stylesheet" href="{{asset('fonts/style.css')}}">
     <link rel="stylesheet" href="{{url('plugins/fontawesome-free/css/all.min.css')}}">
     <script src="{{asset('css/bootstrap.min.js')}}" ></script>
-
+ <style>
+   .flotar{
+     margin-left: 700px;
+   }
+ </style>
 </head>
 <body>
    <div class="container-fluid ">
@@ -34,7 +38,17 @@
           <li class="nav-item active ml-3">
             <a class="nav-link" href="{{route('noticia.index')}}">Noticias</a>
           </li>
-       
+         <li class="flotar nav-item active" >
+          <form class="nav-link" method="POST" action="{{ route('logout') }}">
+            @csrf
+
+            <x-jet-responsive-nav-link class="text-white" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                {{ __('Logout') }}
+            </x-jet-responsive-nav-link>
+        </form>
+         </li>
         </ul>
        
       </div>
