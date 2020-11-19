@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ADMIN MG</title>
+    <link rel="shortcut icon" href="{{asset('img/magna.jpeg')}}" type="image/jpeg">
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <script src="{{asset('js/jquery-3.5.1.js')}}" ></script>
     <link rel="stylesheet" href="{{asset('fonts/style.css')}}">
     <link rel="stylesheet" href="{{url('plugins/fontawesome-free/css/all.min.css')}}">
     <script src="{{asset('css/bootstrap.min.js')}}" ></script>
+    
  <style>
    .flotar{
-     margin-left: 700px;
+     margin-left: 620px;
    }
  </style>
 </head>
@@ -27,16 +29,18 @@
     
       <div class="collapse navbar-collapse" id="navbarColor01">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link ml-3" href="">Bienvenida
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
+         
           <li class="nav-item active ml-3">
             <a class="nav-link" href="{{route('user.index')}}">Administracion de Usuarios</a>
           </li>
           <li class="nav-item active ml-3">
             <a class="nav-link" href="{{route('noticia.index')}}">Noticias</a>
+          </li>
+          <li class="nav-item active ml-3">
+            <a class="nav-link" href="{{route('alicuota.index')}}">Alicuotas</a>
+          </li>
+          <li class="nav-item active ml-3">
+            <a class="nav-link" href="{{route('reserva.index')}}">Reservas</a>
           </li>
          <li class="flotar nav-item active" >
           <form class="nav-link" method="POST" action="{{ route('logout') }}">
@@ -45,7 +49,7 @@
             <x-jet-responsive-nav-link class="text-white" href="{{ route('logout') }}"
                             onclick="event.preventDefault();
                                         this.closest('form').submit();">
-                {{ __('Logout') }}
+                {{ __('Cerrar Sesion') }}
             </x-jet-responsive-nav-link>
         </form>
          </li>

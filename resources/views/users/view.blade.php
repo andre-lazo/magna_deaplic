@@ -32,6 +32,18 @@
             <td class="text-center">{{$user->name}}</td>
           </tr>
           <tr>
+            <td class="text-center">Apellido</td>
+            <td class="text-center">{{$user->apellido}}</td>
+          </tr>
+          <tr>
+            <td class="text-center">Cedula</td>
+            <td class="text-center">{{$user->cedula}}</td>
+          </tr>
+          <tr>
+            <td class="text-center">Residencia</td>
+            <td class="text-center">{{$user->residencia_id}}</td>
+          </tr>
+          <tr>
             <td class="text-center">Correo</td>
             <td class="text-center">{{$user->email}}</td>
           </tr>

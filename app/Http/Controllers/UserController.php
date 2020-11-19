@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\UserFormRequest;
 use App\Http\Requests\UserFormEdit;
 use App\Models\User;
+use App\Models\Residencia;
 
 class UserController extends Controller
 {
@@ -26,7 +27,8 @@ class UserController extends Controller
   
     public function create()
     {
-        return \view('users.create');
+        $residencia=Residencia::all();
+        return \view('users.create',['residencias'=>$residencia]);
     }
 
   
@@ -36,6 +38,9 @@ class UserController extends Controller
         $usuario->name=$request->get('name');
         $usuario->email=$request->get('email');
         $usuario->password= bcrypt($request->get('password'));
+        $usuario->cedula=$request->get('cedula');
+        $usuario->residencia_id=$request->get('residencia');
+        $usuario->apellido=$request->get('apellido');
         $usuario->save();
         return redirect('/user');
     }
@@ -50,16 +55,21 @@ class UserController extends Controller
    
     public function edit($id)
     {
-        return view('users.edit',['user'=> User::findOrFail($id)]);
+        $residencia=Residencia::all();
+        return view('users.edit',['user'=> User::findOrFail($id),'residencias'=>$residencia]);
     }
 
     
     public function update(UserFormEdit $request, $id)
     {
         $this->validate(request(),['email'=>['required','email','max:255','unique:users,email,'.$id]]);
-        $usuario=User::findOrFail($id);
+        $this->validate(request(),['cedula'=>['required','max:10','min:10','unique:users,cedula,'.$id]]);
+        $usuario=User::findOrFail($id); 
         $usuario->name=$request->get('name');
         $usuario->email=$request->get('email');
+        $usuario->cedula=$request->get('cedula');
+        $usuario->residencia_id=$request->get('residencia');
+        $usuario->apellido=$request->get('apellido');
         $usuario->update();
         return redirect('/user');
     }

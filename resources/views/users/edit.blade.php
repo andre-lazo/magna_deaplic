@@ -6,6 +6,22 @@
         <img src="{{asset('img/magna.jpeg')}}" width="100%" alt="">
     </div>
     <div class="col-xs-12 col-lg-6"> 
+      <div>
+        @if($errors->any())
+        <div class="alert alert-danger font-weight-bold">
+           
+            <h4>Errores al Editar Usuario</h4>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+                <ul>
+                  @foreach($errors->all() as $error)
+                    <li>{{$error}}</li>
+                  @endforeach
+                </ul>
+        </div>
+      @endif
+    </div>
         <center><h2 class="mt-3">Usuario: {{$user->name}}</h2></center>
         <h1 class=" text-center mb-5 mt-2">FORMULARIO DE ACTUALIZACION</h1>
         
@@ -17,6 +33,9 @@
           <div class="form-group">
            <center> <label for="exampleInputEmail1"><i class="far fa-user"></i> NOMBRE</label></center>
             <input  type="text" class="form-control" value="{{$user->name}}" name="name" placeholder="ingrese su nombre">
+            <center> <label for="exampleInputEmail1" class="mt-2"><i class="far fa-user"></i> APELLIDO</label></center>
+            <input  type="text" class="form-control" value="{{$user->apellido}}" name="apellido" placeholder="ingrese su nombre">
+
           </div>
          
           <div class="form-group">
@@ -24,6 +43,19 @@
             <input type="email" class="form-control" value="{{$user->email}}" name="email" placeholder="ingrese su email" >
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
           </div>
+          <div class="form-group">
+            <center> <label ><i class="fas fa-id-card"></i> Cedula </label></center>
+             <input maxlength="10" value="{{$user->cedula}}" type="text" class="form-control" name="cedula" placeholder="ingrese numero de cedula" >
+           </div>
+           <div class="form-group">
+            <center> <label ><i class="fas fa-house-user"></i> Codigo de Residencia </label></center>
+             <select name="residencia"  class="form-control">
+              <option value="{{$user->residencia_id}}">{{$user->residencia_id}}</option>
+               @foreach ($residencias as $residencia)
+               <option value="{{$residencia->residencia_id}}">{{$residencia->residencia_id}}</option>
+               @endforeach
+             </select>
+           </div>
           <div class="form-group">
            <center> <label for="password"><i class="fas fa-unlock-alt"></i> Password</label></center>
             <input type="password" class="form-control" name="password">

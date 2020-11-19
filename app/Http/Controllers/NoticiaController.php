@@ -7,9 +7,14 @@ use App\Models\Noticia;
 use App\Http\Requests\NoticiaRequest;
 class NoticiaController extends Controller
 {
+    public function __construct(){
+         
+        $this->middleware('auth');
+     }
     public function index()
     {
         $noticia=Noticia::all();
+       $noticia= $noticia->sortByDesc('id');
         return view('noticias.index',['noticias'=>$noticia]);
     }
 
