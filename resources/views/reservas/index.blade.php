@@ -33,34 +33,22 @@
             <thead class="thead-dark">
               <tr>
                 <th scope="col" class="text-center">#</th>
-                <th scope="col" class="text-center">First</th>
-                <th scope="col" class="text-center">Last</th>
-                <th scope="col" class="text-center">Handle</th>
-                <th scope="col" class="text-center">Eliminar</th>
+                <th scope="col" class="text-center">Usuario</th>
+                <th scope="col" class="text-center">Fecha</th>
+                <th scope="col" class="text-center">Hora</th>
+                <th scope="col" class="text-center">Ver</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row" class="text-center">1</th>
-                <td class="text-center">Mark</td>
-                <td class="text-center">Otto</td>
-                <td class="text-center">@mdo</td>
-                <td><center><a href="" class="btn btn-outline-danger">ELIMINAR</a></center></td>
-              </tr>
-              <tr>
-                <th scope="row" class="text-center">2</th>
-                <td class="text-center">Jacob</td>
-                <td class="text-center">Thornton</td>
-                <td class="text-center">@fat</td>
-                <td><center><a href="" class="btn btn-outline-danger">ELIMINAR</a></center></td>
-              </tr>
-              <tr>
-                <th scope="row" class="text-center">3</th>
-                <td class="text-center">Larry</td>
-                <td class="text-center">the Bird</td>
-                <td class="text-center">@twitter</td>
-                <td><center><a href="" class="btn btn-outline-danger">ELIMINAR</a></center></td>
-              </tr>
+             @foreach ($eventos as $evento)
+             <tr>
+              <th scope="row" class="text-center">{{$evento->id}}</th>
+              <td class="text-center">{{$evento->usuario}}</td>
+              <td class="text-center">{{$evento->start}}</td>
+              <td class="text-center">{{$evento->hora}}</td>
+              <td class="text-center"><a href="{{route('reserva.show',$evento->id)}}" class="btn btn-secondary"><i class="far fa-eye"></i> Ver</a></td>
+            </tr>
+             @endforeach
             </tbody>
           </table>
           

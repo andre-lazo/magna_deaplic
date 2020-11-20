@@ -22,7 +22,7 @@ class NoticiaRequest extends FormRequest
             'titulo' => 'required|max:255',
             'previo' => 'required|max:350',
             'completo'=>'required',
-                'imagen'=>'mimes:jpeg,jpg,bmp,png'
+            'imagen'=>'mimes:jpeg,jpg,bmp,png'
         ];
     }
 }
