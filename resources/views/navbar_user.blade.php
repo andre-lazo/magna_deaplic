@@ -11,6 +11,7 @@
     <script src="{{asset('js/jquery-3.5.1.js')}}" ></script>
     <link rel="stylesheet" href="{{asset('fonts/style.css')}}">
     <link rel="stylesheet" href="{{url('plugins/fontawesome-free/css/all.min.css')}}">
+    <link href="{{ asset('css/estilos.css') }}" rel="stylesheet">
     <script src="{{asset('css/bootstrap.min.js')}}" ></script>
     
  <style>
@@ -31,13 +32,16 @@
         <ul class="navbar-nav mr-auto">
          
           <li class="nav-item active ml-3">
-            <a class="nav-link" href="">Bienvenida</a>
+            <a class="nav-link" href="index">Bienvenida</a>
           </li>
           <li class="nav-item active ml-3">
-            <a class="nav-link" href="">Noticias</a>
+            <a class="nav-link" href="normas">Normas</a>
           </li>
           <li class="nav-item active ml-3">
-            <a class="nav-link" href="">Alicuotas</a>
+            <a class="nav-link" href="{{route('noticia_cliente.index')}}">Noticias</a>
+          </li>
+          <li class="nav-item active ml-3">
+            <a class="nav-link" href="{{route('alicuota_cliente.index')}}">Alicuotas</a>
           </li>
           <li class="nav-item dropdown ml-3">
             <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Reservas</a>
