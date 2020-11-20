@@ -37,7 +37,7 @@ class NoticiaController extends Controller
           $noticia->imagen=$file->getClientOriginalName();
       }
       $noticia->save();
-      return redirect('/noticia');
+      return redirect('/noticia')->with('success','Noticia Registrada correctamente');
     }
 
     
@@ -61,6 +61,6 @@ class NoticiaController extends Controller
     {
         $noticia=Noticia::findOrFail($id);
         $noticia->delete();
-        return redirect('noticia');
+        return redirect('noticia')->with('success','Noticia borrada correctamente');
     }
 }

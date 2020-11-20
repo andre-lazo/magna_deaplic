@@ -42,7 +42,8 @@ class UserController extends Controller
         $usuario->residencia_id=$request->get('residencia');
         $usuario->apellido=$request->get('apellido');
         $usuario->save();
-        return redirect('/user');
+       
+        return redirect('/user')->with('success','Usuario '.$usuario->name.' Registrado correctamente');
     }
 
     public function show($id)
@@ -71,7 +72,7 @@ class UserController extends Controller
         $usuario->residencia_id=$request->get('residencia');
         $usuario->apellido=$request->get('apellido');
         $usuario->update();
-        return redirect('/user');
+        return redirect('/user')->with('success','Usuario '.$usuario->name.' Actualizado correctamente');
     }
 
     
@@ -79,6 +80,6 @@ class UserController extends Controller
     {
         $usuario=User::findOrFail($id);
         $usuario->delete();
-        return redirect('user');
+        return redirect('user')->with('success','Usuario '.$usuario->name.' Borrado correctamente');
     }
 }

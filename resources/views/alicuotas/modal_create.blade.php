@@ -8,7 +8,11 @@
     </button>
     </div>
     <div class="modal-body">
-    <form>
+    
+    {!! Form::open(['url' => '/alicuota']) !!}
+    
+    {{ Form::token() }}
+    
       <div class="form-group">
         <label for="recipient-name" class="col-form-label">Residencia:</label>
         <select name="residencia" class="form-control">
@@ -16,8 +20,6 @@
           <option value="{{$residencia->residencia_id}}">{{$residencia->residencia_id}}</option>
           @endforeach
         </select>
-      
-     
         <label for="message-text" class="col-form-label">Propietario:</label>
         <select name="propietario" class="form-control">
           @foreach ($usuarios as $usuario)
@@ -41,12 +43,15 @@
         <label for="message-text" class="col-form-label">Valor Adeudado:</label>
         <input type="text" name="valor_adeudado"  class="form-control" id="recipient-name">
       </div>
-    </form>
+    
+   
+    
     </div>
     <div class="modal-footer">
     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-    <button type="button" class="btn btn-danger">Guardar</button>
+    <button type="submit" class="btn btn-danger">Guardar</button>
     </div>
     </div>
     </div>
     </div>
+    {!! Form::close() !!}

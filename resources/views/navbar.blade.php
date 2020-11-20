@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{asset('fonts/style.css')}}">
     <link rel="stylesheet" href="{{url('plugins/fontawesome-free/css/all.min.css')}}">
     <script src="{{asset('css/bootstrap.min.js')}}" ></script>
+    <script src="{{asset('js/sweetalert.min.js')}}" ></script>
     
  <style>
    .flotar{
@@ -59,6 +60,7 @@
      
     </nav>
    </div>
+   
       <section class="content mt-5">
       @yield('content')
       </section>
@@ -69,5 +71,6 @@
          Teléfono Garita Magna: +593 4-275-3361. <br>
          Celular Garita Magna: +593 99 989 6250.  
        </footer></center>
+       @include('sweet::alert')
 </body>
 </html>

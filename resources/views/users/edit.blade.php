@@ -6,22 +6,7 @@
         <img src="{{asset('img/magna.jpeg')}}" width="100%" alt="">
     </div>
     <div class="col-xs-12 col-lg-6"> 
-      <div>
-        @if($errors->any())
-        <div class="alert alert-danger font-weight-bold">
-           
-            <h4>Errores al Editar Usuario</h4>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-                <ul>
-                  @foreach($errors->all() as $error)
-                    <li>{{$error}}</li>
-                  @endforeach
-                </ul>
-        </div>
-      @endif
-    </div>
+      
         <center><h2 class="mt-3">Usuario: {{$user->name}}</h2></center>
         <h1 class=" text-center mb-5 mt-2">FORMULARIO DE ACTUALIZACION</h1>
         
