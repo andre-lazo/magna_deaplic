@@ -32,10 +32,10 @@
         <ul class="navbar-nav mr-auto">
          
           <li class="nav-item active ml-3">
-            <a class="nav-link" href="index">Bienvenida</a>
+            <a class="nav-link" href="{{url('index')}}">Bienvenida</a>
           </li>
           <li class="nav-item active ml-3">
-            <a class="nav-link" href="normas">Normas</a>
+            <a class="nav-link" href="{{url('normas')}}">Normas</a>
           </li>
           <li class="nav-item active ml-3">
             <a class="nav-link" href="{{route('noticia_cliente.index')}}">Noticias</a>
@@ -48,23 +48,28 @@
          
           <li class="nav-item dropdown ml-3">
             <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Reservas</a>
-            <div class="dropdown-menu "> 
+            <div class="dropdown-menu  bg-dark"> 
             <a class="dropdown-item" href=""><i class="fas fa-swimmer"></i>  Piscinas</a>
               <a class="dropdown-item " href=""><i class="fas fa-gift"></i> Salon de eventos</a>
               <a class="dropdown-item " href=""><i class="fas fa-futbol"></i> Canchas</a>
             </div>
           </li>
-         <li class="flotar nav-item active" >
-          <form class="nav-link" method="POST" action="{{ route('logout') }}">
-            @csrf
-
-            <x-jet-responsive-nav-link class="text-white" href="{{ route('logout') }}"
-                            onclick="event.preventDefault();
-                                        this.closest('form').submit();">
-                {{ __('Cerrar Sesion') }}
-            </x-jet-responsive-nav-link>
-        </form>
-         </li>
+        
+         <li class="flotar nav-item dropdown  active">
+          <a class="nav-link dropdown-toggle " data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{Auth::user()->email}}</a>
+          <div class="dropdown-menu bg-dark"> 
+            <a class="dropdown-item " href="{{route('user_cliente.show',Crypt::encrypt(Auth::user()->id))}}"><i class="fas fa-futbol"></i>Perfil</a>
+            <form class="nav-link" method="POST" action="{{ route('logout') }}">
+              @csrf
+  
+              <x-jet-responsive-nav-link class="text-white" href="{{ route('logout') }}"
+                              onclick="event.preventDefault();
+                                          this.closest('form').submit();">
+                  {{ __('Cerrar Sesion') }}
+              </x-jet-responsive-nav-link>
+          </form>
+          </div>
+        </li>
         </ul>
        
       </div>

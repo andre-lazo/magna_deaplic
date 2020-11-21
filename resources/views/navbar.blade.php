@@ -43,17 +43,21 @@
           <li class="nav-item active ml-3">
             <a class="nav-link" href="{{route('reserva.index')}}">Reservas</a>
           </li>
-         <li class="flotar nav-item active" >
-          <form class="nav-link" method="POST" action="{{ route('logout') }}">
-            @csrf
-
-            <x-jet-responsive-nav-link class="text-white" href="{{ route('logout') }}"
-                            onclick="event.preventDefault();
-                                        this.closest('form').submit();">
-                {{ __('Cerrar Sesion') }}
-            </x-jet-responsive-nav-link>
-        </form>
-         </li>
+          <li class="flotar nav-item dropdown  active">
+            <a class="nav-link dropdown-toggle " data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{Auth::user()->email}}</a>
+            <div class="dropdown-menu bg-dark"> 
+              <a class=" ml-4 text-white" href="{{route('user.show',Crypt::encrypt(Auth::user()->id))}}">Perfil</a>
+              <form class="nav-link" method="POST" action="{{ route('logout') }}">
+                @csrf
+    
+                <x-jet-responsive-nav-link class="text-white" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                            this.closest('form').submit();">
+                    {{ __('Cerrar Sesion') }}
+                </x-jet-responsive-nav-link>
+            </form>
+            </div>
+          </li>
         </ul>
        
       </div>

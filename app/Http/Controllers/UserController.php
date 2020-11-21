@@ -7,7 +7,7 @@ use App\Http\Requests\UserFormRequest;
 use App\Http\Requests\UserFormEdit;
 use App\Models\User;
 use App\Models\Residencia;
-
+use Illuminate\Support\Facades\Crypt;
 class UserController extends Controller
 {
      public function __construct(){
@@ -41,15 +41,16 @@ class UserController extends Controller
         $usuario->cedula=$request->get('cedula');
         $usuario->residencia_id=$request->get('residencia');
         $usuario->apellido=$request->get('apellido');
+        $usuario->rol=$request->get('rol');
         $usuario->save();
-        $usuario->assignRole($request->get('rol'));
+        $usuario->assignRole($request->get($usuario->rol));
        
         return redirect('/user')->with('success','Usuario '.$usuario->name.' Registrado correctamente');
     }
 
     public function show($id)
     {
-        $user=User::findOrFail($id);
+        $user=User::findOrFail(Crypt::decrypt($id));
         return \view('users.view',['user'=>$user]);
 
     }

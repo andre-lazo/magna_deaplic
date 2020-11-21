@@ -1,5 +1,5 @@
 {!! Form::open(['url' => 'noticia', 'files' => true]) !!}
-        {{FORM::token()}}
+        {{FORM::token()}}  
 <div class="modal fade" data-backdrop="static" id="noticia_nueva" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable" role="document">
       <div class="modal-content">

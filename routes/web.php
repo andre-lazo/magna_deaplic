@@ -23,9 +23,9 @@ Route::get('/', function (Request $request) {
         if ($name_rol=="admin2") {
             return redirect('/user');
         } 
-        if($name_rol=="cliente2" || $name_rol=="cliente_master2")
+        if($name_rol=="cliente2"|| $name_rol=="cliente_master2")
        
-        return view('user_cliente.index');
+        return view('user_cliente.index')->with('success','Bienvenido Usuario'.Auth::user()->name);
         }
     });
 
@@ -45,6 +45,7 @@ Route::get('/', function (Request $request) {
     Route::get('/normas', function () {return view('user_cliente.normas');});
     Route::resource('noticia_cliente', 'App\Http\Controllers\Noticia_userController');
     Route::resource('alicuota_cliente', 'App\Http\Controllers\Alicuota_userController');
+    Route::resource('user_cliente', 'App\Http\Controllers\User_clienteController');
 
            });
     

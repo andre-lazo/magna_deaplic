@@ -53,7 +53,7 @@ class AlicuotaController extends Controller
         $alicuota->cuotas_adeudadas=$request->get('cuotas_adeudadas');
         $alicuota->valor_adeudado=$request->get('valor_adeudado');
         $alicuota->save();
-        return \redirect('alicuota')->with('success','Alicuota de'.$alicuota->nombre.' registrada correctamente');
+        return \redirect('alicuota')->with('success','Alicuota de '.$alicuota->nombre.' registrada correctamente');
 
     }
 
@@ -89,7 +89,7 @@ class AlicuotaController extends Controller
         $alicuota->cuotas_adeudadas=$request->get('cuotas_adeudadas');
         $alicuota->valor_adeudado=$request->get('valor_adeudado');
         $alicuota->update();
-        return \redirect('alicuota')->with('success','Alicuota de'.$alicuota->nombre.' actualizada correctamente');
+        return \redirect('alicuota')->with('success','Alicuota de '.$alicuota->nombre.' actualizada correctamente');
 
     }
 

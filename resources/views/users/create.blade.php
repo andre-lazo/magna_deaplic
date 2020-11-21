@@ -48,7 +48,7 @@
           <div class="form-group">
             <center>  <label for="password">Rol</label></center>
              <select name="rol" class="form-control">
-               <option value="cliente_master2">PROPIETARIO</option>
+               <option value="cliente_master2">RESIDENTE</option>
                <option value="cliente2">FAMILIAR</option>
              </select>
             </div>
