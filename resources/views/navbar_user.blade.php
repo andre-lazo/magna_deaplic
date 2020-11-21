@@ -40,9 +40,12 @@
           <li class="nav-item active ml-3">
             <a class="nav-link" href="{{route('noticia_cliente.index')}}">Noticias</a>
           </li>
+         
           <li class="nav-item active ml-3">
             <a class="nav-link" href="{{route('alicuota_cliente.index')}}">Alicuotas</a>
           </li>
+        
+         
           <li class="nav-item dropdown ml-3">
             <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Reservas</a>
             <div class="dropdown-menu "> 

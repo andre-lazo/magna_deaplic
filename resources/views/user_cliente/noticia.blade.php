@@ -3,11 +3,11 @@
 @section('content')
    
    
-    
-    <h1 class="ml-3 mt-4 pt-5" >ULTIMAS NOTICIAS</h1>
+    <h1 class="ml-3 mt-4 pt-5" id="inicio" >ULTIMAS NOTICIAS</h1>
      
     @foreach ($noticias as $noticia)
     @include('user_cliente.modal_view')
+    
 <section class="jumbontron " >
           
     
@@ -38,4 +38,5 @@
 @endif
  
 @endforeach
+
     @endsection

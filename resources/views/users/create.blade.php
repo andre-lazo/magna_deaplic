@@ -45,6 +45,13 @@
           <center>  <label for="password"><i class="fas fa-unlock-alt"></i> Confirme Password</label></center>
             <input type="password" class="form-control" name="password_confirmation">
           </div>
+          <div class="form-group">
+            <center>  <label for="password">Rol</label></center>
+             <select name="rol" class="form-control">
+               <option value="cliente_master2">PROPIETARIO</option>
+               <option value="cliente2">FAMILIAR</option>
+             </select>
+            </div>
           
          
           <button type="submit" class="btn btn-primary"><i class="fas fa-save"> Guardar</i></button>

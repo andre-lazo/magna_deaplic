@@ -42,6 +42,7 @@ class UserController extends Controller
         $usuario->residencia_id=$request->get('residencia');
         $usuario->apellido=$request->get('apellido');
         $usuario->save();
+        $usuario->assignRole($request->get('rol'));
        
         return redirect('/user')->with('success','Usuario '.$usuario->name.' Registrado correctamente');
     }
